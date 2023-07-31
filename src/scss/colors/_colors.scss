@@ -1,0 +1,37 @@
+// MAIN
+$body-bg: #0da5f4;
+$text-main: #fff;
+
+// ACCENTS
+$accent: #3790E2;
+$accent-brighter: #00B2FF;
+$accent-lighten: #F4FCFF;
+$accent-light: #E9F8FF;
+$accent-light-2: #E9F8FF;
+$accent-light-3: #D6F5FF;
+$accent-darker: #005D8E;
+
+
+$accent-rgb: toRGB($accent);
+$accent-rgba: toRGBA($accent, 1);
+$accent-rgba-numbers: toRGBA_onlyNumbers($accent);
+
+
+// MAIN BUTTONS
+$btn-bg: #fff;
+$btn-text: $accent-darker;
+$btn-bg-hover: $accent-light-2;
+
+// MISC
+$header-bg: #fff;
+$footer-bg: #04132F;
+$footer-color: #fff;
+$danger: #BF2929;
+
+$accent-shadow: rgba($accent, 0.5);
+$transition: all .2s ease;
+$divider: #dbdbdb;
+$section-plate: #fff;
+
+// OTHER VARIABLES
+$transition: all .2s ease;

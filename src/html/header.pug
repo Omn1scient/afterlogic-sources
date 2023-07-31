@@ -1,0 +1,27 @@
+header.header
+	.header-container
+		.header__content
+			a.header__logo(href='#' title="Логотип компании")
+				include ../img/logo/logo.svg
+
+			button.header__hamburger.hamburger(type='button')
+				span.hamburger__line
+				span.hamburger__line
+
+			nav.header__main-navigation
+				ul.header__nav-list.list-style-none
+					li.header__nav-item.active
+						a.header__nav-link(href='#')
+							span Menu Item 1
+					li.header__nav-item
+						a.header__nav-link(href='#')
+							span Menu Item 2
+					li.header__nav-item
+						a.header__nav-link(href='#')
+							span Menu Item 3
+					li.header__nav-item
+						a.header__nav-link(href='#')
+							span Menu Item 4
+					li.header__nav-item
+						a.header__nav-link(href='#')
+							span Menu Item 5

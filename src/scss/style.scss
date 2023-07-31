@@ -1,0 +1,23 @@
+@import "fonts";
+@import "colors/colors";
+@import "global/functions";
+@import "global/global";
+@import "misc/misc";
+
+html,
+body {
+	min-width: 320px;
+	width: 100%;
+	font-family: 'Inter', 'Arial', sans-serif;
+	background: $body-bg;
+	background: linear-gradient(0deg, rgba(0, 209, 255, 0.40) 0%, rgba(0, 209, 255, 0.40) 100%), linear-gradient(143deg, #00B2FF 0%, rgba(61, 93, 255, 0.52) 48.18%, rgba(128, 0, 255, 0.00) 100%), rgba(0, 93, 142, 0.80);
+	background-repeat: no-repeat;
+	color: $text-main;
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+}
+
+@import "components/components";
+@import "blocks/blocks";
+

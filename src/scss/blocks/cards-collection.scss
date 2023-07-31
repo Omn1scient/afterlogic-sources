@@ -1,0 +1,7 @@
+.cards-collection__card-articles {
+  @media (min-width: 640px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px -40px;
+  }
+}

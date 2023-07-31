@@ -1,0 +1,52 @@
+@mixin hamburger {
+  width: var(--hamburger-width);
+  height: var(--hamburger-height);
+  position: relative;
+	outline: none;
+	box-shadow: none;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+  &__line {
+    width: 100%;
+    height: var(--hamburger-line-height);
+    background-color: currentColor;
+    transition: all .2s ease-in-out;
+    border-radius: 0;
+		display: block;
+
+		&:not(:last-child) {
+			transform: scaleX(1.2) translateX(-2px);
+			margin-bottom: 3px;
+		}
+  }
+
+  &.active {
+    .hamburger__line {
+			
+			&:nth-child(1) {
+				transform: rotate(45deg) translateY(-372%) translateX(-18%) scaleX(1.2);
+				transition: all .2s ease;
+				transform-origin: left;
+			}
+
+			&:nth-child(2) {
+				transform: rotate(-45deg) translateY(378%) translateX(-20%) scaleX(1.2);
+				transition: all .2s ease-in-out;
+				transform-origin: left;
+			}
+    }
+  }
+}
+
+.hamburger {
+  --hamburger-width: 46px;
+  --hamburger-height: 45px;
+  --hamburger-line-height: 2px;
+	padding: 10px;
+	border: none;
+
+  @include hamburger;
+}

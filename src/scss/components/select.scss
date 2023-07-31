@@ -1,0 +1,63 @@
+.custom-select {
+  position: relative;
+  display: block;
+
+  select {
+    width: 100%;
+    padding: 4px 8px 4px 2px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    color: rgba(0, 0, 0, 0.20);
+    outline: none;
+
+    @media (min-width: 640px) {
+      padding: 7px 8px 13px 4px;
+    }
+
+    &:focus-visible {
+      color: #000;
+    }
+  }
+
+  span {
+    position: absolute;
+    width: 40px;
+    height: calc(100% - 1px);
+    background-color: #fff;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+  }
+
+  span::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../img/icons/dropdown-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center calc(50% - 3px);
+    background-size: 59%;
+    opacity: 0.5;
+  }
+
+  &.active {
+    span::before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.invalid {
+    select {
+      border-bottom: 1px solid $danger;
+      color: $danger;
+    }
+
+    span::before {
+      filter: invert(15%) sepia(66%) saturate(4679%) hue-rotate(351deg) brightness(97%) contrast(83%);
+    }
+  }
+}
+

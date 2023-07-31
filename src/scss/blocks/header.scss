@@ -1,0 +1,161 @@
+.header {
+	background-color: $header-bg;
+	position: relative;
+	padding: 0.6rem 0;
+}
+
+.header__content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__main-navigation {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	left: 0;
+	right: 0;
+	background-color: transparent;
+	z-index: 2;
+	max-height: 0;
+	overflow: hidden;
+	transition: $transition;
+	opacity: 0;
+	pointer-events: none;
+
+	&.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	@media (min-width: 1064px) {
+		display: block;
+		max-height: unset;
+		position: static;
+		opacity: 1;
+		z-index: 0;
+		pointer-events: auto;
+	}
+}
+
+.header__logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+
+	&::before {
+	  position: absolute;
+	  content: '';
+		top: calc(50% - 16px);
+		bottom: calc(50% - 16px);
+	  right: 0;
+	  width: 1px;
+	  height: calc(50% + 9px);
+	  background-color: $accent;
+	}
+
+	svg {
+		margin-left: 33px;
+		margin-right: 28px;
+
+		@media (min-width: 640px) {
+			margin-left: 23px;
+		}
+	}
+}
+
+.header__hamburger {
+	margin-right: 8px;
+
+	@media (min-width: 640px) {
+		margin-right: -2px;
+	}
+
+	@media (min-width: 1064px) {
+		display: none;
+	}
+}
+
+.header__nav-list {
+	padding: 0.6rem 0;
+	background-color: $accent-lighten;
+
+	@media (min-width: 1064px) {
+		display: flex;
+		background-color: transparent;
+		padding: 0.25rem 0;
+		justify-content: flex-end;
+		margin-right: 29px;
+	}
+}
+
+.header__nav-item {
+	text-align: center;
+	background-color: $accent-lighten;
+
+	@media (min-width: 1064px) {
+		background-color: transparent;
+	}
+
+	&:not(:last-child) {
+		@media (min-width: 1064px) {
+			margin-right: 2.5rem;
+		}
+	}
+
+	&:hover {
+		background-color: $accent-light;
+
+		@media (min-width: 1064px) {
+			background-color: transparent;
+		}
+
+		a {
+			color: $accent-darker;
+			font-weight: bold;
+
+			@media (min-width: 1064px) {
+				font-weight: 400;
+			}
+		}
+
+		span {
+			&::before {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.header__nav-link {
+	font-family: Roboto, sans-serif;
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.6rem 0;
+	color: $accent-brighter;
+	font-size: 0.875rem;
+
+	letter-spacing: 0.15px;
+
+	span {
+		@media (min-width: 1064px) {
+			position: relative;
+			top: 1px;
+		}
+
+		&::before {
+			background: $accent;
+			width: 100%;
+			height: 1px;
+			display: block;
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			content: "";
+			transition: all 0.2s ease;
+			transform-origin: left;
+			transform: scale(0);
+		}
+	}
+}
